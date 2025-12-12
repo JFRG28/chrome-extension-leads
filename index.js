@@ -6,30 +6,6 @@ const deleteAllBtn=document.querySelector("#delete-all-btn");
 const leadsFromLocalStorage=JSON.parse(localStorage.getItem("myLeads"));
 const tabBtn=document.querySelector("#tab-btn");
 
-/*testing tab only used when no API
-const tabs = [
-    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
-]
-*/
-
-/*
-localStorage.setItem("myLead","www.youtube.com");
-console.log(localStorage.getItem("myLead"));
-localStorage.clear()
-
-// 1. Turn the myLeads string into an array
-myLeads=JSON.parse(myLeads)
-console.log(typeof myLeads)
-// 2. Push a new value to the array
-myLeads.push("www.google.com")
-console.log(myLeads)
-// 3. Turn the array into a string again
-myLeads=JSON.stringify(myLeads)
-// 4. Console.log the string using typeof to verify that it's a string
-console.log(typeof myLeads)
-*/
-
-//Initial validation for localStorage
 if (leadsFromLocalStorage){
     myLeads=leadsFromLocalStorage;
     renderArray(myLeads);
@@ -48,15 +24,6 @@ function renderArray(paramArray){
                 </a>
             </li>
         `
-        /* alternative way to render de elements
-            1. create element
-            2. set text content
-            3. append to ul
-        
-            const li=document.createElement("li")
-            li.textContent=myLeads[i]
-            ulEl.append(li)
-        */
     }
     ulEl.innerHTML=listItems;
 }
